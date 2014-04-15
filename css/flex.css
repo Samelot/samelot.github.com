@@ -11,7 +11,7 @@
     flex-flow:row nowrap;
 
     justify-content:center;
-
+    width:100%;
     max-width:884px;
 
 }

@@ -182,7 +182,7 @@ blockquote ul:last-child,blockquote ol:last-child{
     margin-bottom: 0; }
 
 table {
-  word-break:keep-all;
+  word-break:break-all;
   padding: 0;
   /*margin-bottom:20px*/
 }
@@ -211,7 +211,7 @@ table {
 img {
   max-width: 100%;
 }
-/*
+
 span.frame {
   display: block;
   overflow: hidden; }
@@ -273,7 +273,7 @@ span.float-right {
     margin: 13px auto 0;
     text-align: right; }
 
-*/
+
 code, tt {
   font-size: 92%;
   /*line-height: 19px;*/
