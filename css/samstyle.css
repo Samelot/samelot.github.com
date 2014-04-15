@@ -1,10 +1,10 @@
 body {
-    /*
+
     margin-left:0px;
     margin-right:0px;
     padding-left:0px;
     padding-right:0px;
-    */
+
     /*font: 13.34px Verdana, helvetica, arial, clean, sans-serif;*/
     /*font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;*/
     font-size:100%
@@ -62,9 +62,6 @@ body {
 .logoLink {
     display:block;
 
-    margin-left:auto;
-    margin-right:auto;
-
     min-width:320px;
     /*max-width:500px;*/
     height:70px;
@@ -115,8 +112,8 @@ body {
 
     text-shadow: 3px 2px 0px rgba(180, 180, 180, .6);
     font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;
-    padding:0px 0px 0px 4px;
-    margin:0px;
+    /*padding:0px 0px 0px 4px;
+    margin:0px;*/
     font-weight:bold;
 }
 
@@ -135,7 +132,7 @@ color: #f5a2c6;
     display:block;
     text-align: left;
 
-    padding:4px;
+    /*padding:4px;*/
     margin:8px auto 8px auto;
 
     border-bottom: 1px dotted black;
