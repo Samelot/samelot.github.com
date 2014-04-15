@@ -38,7 +38,7 @@ body {
     */
 
     min-width:320px;
-    max-width:100%;
+    max-width:884px;
     height:131px;
 
     margin-bottom:;
@@ -117,8 +117,6 @@ body {
     font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;
     padding:0px 0px 0px 4px;
     margin:0px;
-    margin-left: auto;
-    margin-right:auto;
     font-weight:bold;
 }
 
@@ -137,7 +135,7 @@ color: #f5a2c6;
     display:block;
     text-align: left;
 
-    /*padding:4px;*/
+    padding:4px;
     margin:8px auto 8px auto;
 
     border-bottom: 1px dotted black;
