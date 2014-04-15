@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://sizeoverload.com/sitemap.xml
