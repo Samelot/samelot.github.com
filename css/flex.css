@@ -42,9 +42,10 @@
 }
 
 .picsItem {
+    /*
     border:1px solid rgba(180, 180, 180, .2);
     margin:0px 4px 0px 4px;
-
+    */
     /* SLOWER PERFORMANCE? */
     /*border-radius: 3px;*/
 }

@@ -65,7 +65,7 @@ body {
     margin-right:auto;
 
     min-width:320px;
-    max-width:500px;
+    /*max-width:500px;*/
     height:70px;
 
 
@@ -97,7 +97,7 @@ body {
 {
 
     /*border-bottom: 2px dotted #f5a2c6;*/
-    text-decoration:unerline;
+    text-decoration:underline;
     /*background: #AED180;*/
 }
 
@@ -158,7 +158,7 @@ color: #f5a2c6;
 
 
 }
-*/
+
 .blogNav {
 
     min-width:320px;
