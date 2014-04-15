@@ -1,0 +1,15 @@
+---
+title: Pics and visuals - sizeoverload
+layout: allposts
+---
+{% for post in site.categories.pics %}
+    {% if post.category == 'pics' %}
+        {% capture position %}{{post.custom_spritePos}}{% endcapture %}
+        {% capture width %}{{post.custom_spritePos}}{% endcapture %}
+        {% capture frequency %}{{post.custom_spriteFreq}}{% endcapture %}
+        <div class="flexContainer artRow">
+
+            {{ post.content }}
+        </div>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,65 @@
+/* Flex Containers */
+
+.flexContainer {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;  /* OLD - Firefox 19- */
+    display: -ms-flexbox;  /* Chrome */
+    display: -webkit-flex; /* IE 10 */
+    display: flex; /* brings up issues with flexitem having greater width of flexbox, and spaning outside of it. */
+
+    -webkit-flex-flow: row nowrap;
+    flex-flow:row nowrap;
+
+    justify-content:center;
+
+
+}
+
+/* For bouncing main content off of header !!! all in one place as to keep things consistent */
+
+.artRow {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    margin-bottom: 20px;
+    /*padding:0px 8px 0px 8px;*/
+    /*margin:18px;*/
+
+}
+
+/* Flex Items */
+
+.blogItem {
+    width:100%;
+    /*margin:4px;*/
+    border-bottom:0px solid rgba(180, 180, 180, .7);
+    /*padding: 10px;*/
+}
+
+.picsItem {
+    border:1px solid rgba(180, 180, 180, .2);
+    margin:0px 4px 0px 4px;
+
+    /* SLOWER PERFORMANCE? */
+    /*border-radius: 3px;*/
+}
+
+
+@media all and (max-width: 483px) {
+    .flexContainer {
+        -webkit-flex-flow: column nowrap;
+        justify-content:center;
+    }
+
+    .picsItem, .blogItem {
+      align-self:center;
+      width:100%;
+    }
+}
+
+

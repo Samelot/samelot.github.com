@@ -1,0 +1,244 @@
+body {
+    /*
+    margin-left:0px;
+    margin-right:0px;
+    padding-left:0px;
+    padding-right:0px;
+    */
+    /*font: 13.34px Verdana, helvetica, arial, clean, sans-serif;*/
+    /*font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;*/
+    font-size:100%
+
+}
+
+.wrapper {
+    min-width:320px;
+    max-width: 884px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left:20px;
+    padding-right:20px;
+}
+
+/*****************************************************************************/
+/* style, links.. in order
+/*****************************************************************************/
+
+.header {
+    /* Instead of height... maybe try using top bottom padding to pad between top */
+    /* check out http://blog.codinghorror.com/ */
+
+    /*
+    margin-left: auto;
+    margin-right: auto;
+    max-width:425px;
+    */
+
+    min-width:320px;
+    max-width:100%;
+    height:131px;
+
+    margin-bottom:;
+
+    text-align:center;
+    /*border:1px solid black;*/
+
+    /* CONSISTENCY: for spacing between elements, primarilly use margin-bottom */
+    /* github markdown styings do not mix margin-top and margin-bottom... */
+    /* choose one and stick to it */
+
+}
+
+
+
+
+.headerLinks {
+    margin-top:44px;
+}
+
+.logoLink {
+    display:block;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    min-width:320px;
+    max-width:500px;
+    height:70px;
+
+
+    background-image: url(../images/sizeoverload_text8.png);
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.pageLink {
+    text-decoration: none;
+}
+
+.pageLink, .pageLink:hover {
+    display:inline-block;
+    text-align:center;
+
+    width:60px;
+
+    margin:0px 1px 0px 1px;
+    padding:0px 6px 9px 6px;
+
+    font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;
+    color: #000;
+
+    font-size:20px;
+}
+
+.pageLink:hover
+{
+
+    /*border-bottom: 2px dotted #f5a2c6;*/
+    text-decoration:unerline;
+    /*background: #AED180;*/
+}
+
+.blogItem span {
+    display:block;
+    text-align:left;
+
+    line-height: 20px;
+    height:19px;
+
+
+    color:#FFF;
+    background:#000;
+
+    text-shadow: 3px 2px 0px rgba(180, 180, 180, .6);
+    font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;
+    padding:0px 0px 0px 4px;
+    margin:0px;
+    font-weight:bold;
+}
+
+a {
+text-decoration:none;
+color:#0383c9;
+font-weight:;
+}
+
+a:hover {
+text-decoration:underline;
+color: #f5a2c6;
+}
+
+.blogItem a {
+    display:block;
+    text-align: left;
+
+    padding:4px;
+    margin:8px auto 8px auto;
+
+    border-bottom: 1px dotted black;
+
+    /*background: rgba(102,128,153,.02);*/
+    /*border-bottom:1px solid rgba(180, 180, 180, .7);*/
+
+    /*
+    text-decoration: none;
+    color: #000;
+    */
+
+    /*font-size: 98%;*/
+}
+
+.blogItem a:hover {
+    /*background: rgba(102,128,153,.02);*/
+    /*border-bottom: 2px dotted #FF80FF;*/
+    /*font-weight:bold;*/
+    font-size: 100%;
+
+
+}
+*/
+.blogNav {
+
+    min-width:320px;
+    max-width:884px;
+
+    padding:0px;
+    margin:0px;
+
+    color: #000;
+    text-align:left;
+}
+
+.blogNav span {
+    display:block;
+    text-align:left;
+
+    line-height: 20px;
+    height:19px;
+
+    color:#FFF;
+    background:#000;
+
+    text-shadow: 3px 2px 0px rgba(180, 180, 180, .35);
+    font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;
+    padding:0px 0px 0px 4px;
+
+    margin:0px;
+    font-weight:bold;
+
+}
+
+.alignleft {
+    float: left;
+    text-shadow: 3px 2px 0px rgba(180, 180, 180, .15);
+
+}
+
+.alignright {
+    float: right;
+    text-shadow: 3px 2px 0px rgba(180, 180, 180, .15);
+}
+
+/*
+.blogNav a[href] {
+    text-decoration: none;
+    border-bottom: 1px dotted black;
+    padding:6px;
+    margin:8px auto 8px auto;
+    color: #000;
+    font-size: 98%;
+}
+
+.blogNav a[href]:hover {
+
+    font-size: 100%;
+    font-weight:bold;
+}
+
+.noLink {
+    color: black;
+}
+*/
+
+.bulletbobbit {
+    display:block;
+    float:right;
+    position:;
+
+    /*background:rgba(210, 0, 100, .1);*/
+    color:rgba(0, 0, 0, 1);
+    text-shadow: 2px 1px 1px rgba(0, 0, 0, .2);
+    /*height:12px;
+    line-height:4px;*/
+    /*    text-shadow: 3px 2px 0px rgba(180, 180, 180, .22);*/
+    padding:2px 0px 1px 0px;
+    margin-top:5px;
+    font-size:20px;
+
+}
+
+img {
+    border:1px solid rgba(180, 180, 180, .2);
+}
