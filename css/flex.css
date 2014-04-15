@@ -36,8 +36,7 @@
 /* Flex Items */
 
 .blogItem {
-    /*width:100%;*/
-    flex:1;
+    width:100%;
     /*margin:4px;*/
     border-bottom:0px solid rgba(180, 180, 180, .7);
     /*padding: 10px;*/
@@ -61,7 +60,7 @@
 
     .picsItem, .blogItem {
       align-self:center;
-      /*width:100%;*/
+      width:100%;
     }
 }
 
