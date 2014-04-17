@@ -4,33 +4,8 @@ layout: blogpost
 category: blog
 custom_sub: osc+pd
 ---
-{% include injectbullet.html %}
-
-{% include injectblognav.html %}
-
-## Overview and Requirements
-
-In this post, we'll setup Photoshop to use OSC (Open Sound Control). If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge]().
-
-We'll use a Generator plugin called Openbuttkiss, which gives OSC messages access to Photoshop's API. More specifically, when an OSC message with an argument of 1 is recieved, the foreground and background colors are swapped. Utilized by this plugin is a Nodejs module that provides the protocols to communicate via OSC. I made the plugin to demonstrate this sort of integration at its most fundamental level; it is left simple and concise. Expansion will come later.
-
-I used some code from Tom Krcha's [getting-started-plugin](https://github.com/adobe-photoshop/generator-getting-started "getting-started-plugin") - this provided a good foundation for my plugin and the features I would add. Big thanks to him and the others out there that made great tutorials employing/using Photoshop-Generator and Nodejs:
-
-+ **Andy Hall:** [Node.js + Photoshop: How Comments Feed Design and Generator](http://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/), [JSConf.Asia 2013](http://www.youtube.com/watch?v=wqmMqB91zdI)
-
-+ **Tom Krcha:** [Script Your First Adobe Generator Plugin For Photoshop](http://tomkrcha.com/?p=3896)
-
-+ **Lee Brimelow:** [Introduction to Photoshop Generator](http://www.youtube.com/watch?v=lmSKgiY0ZPM)
-
-The purpose of writing this post is to not explain every little thing that's going on. I'm more interested in understanding the OSC implementation in Photoshop. In addition, I'd like to clear up any areas of the plugin that are prone to confusion, and that may have caused myself some frustration.
-
-To follow along, you'll need:
-
-Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core), [Node.js](http://nodejs.org/), [Osculator](http://www.osculator.net/), [Openbuttkiss]()
-
 <!--
 + the or our : the/our : OUR/WE < ok?
-+ Clicking the green box in osculator!!!
 + USE ARGUMENT>> NOT VALUE !!
 + swap vs swaps. Having now changed order of main.js code/code description!
 + plugin menu-state vs plugin's menu-state
@@ -40,17 +15,41 @@ Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core
 + capitalization
 -->
 
+{% include injectbullet.html %}
+
+{% include injectblognav.html %}
+
+## Overview and Requirements
+
+In this post, we'll setup Photoshop to use OSC (Open Sound Control). If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge]().
+
+We'll use a Generator plugin called [Openbuttkiss](https://github.com/Samelot/openbuttkiss), which gives OSC messages access to Photoshop's API. More specifically, when an OSC message with an argument of 1 is recieved, the foreground and background colors are swapped. Utilized by this plugin is a Nodejs module that provides the protocols to communicate via OSC. I made the plugin to demonstrate this sort of integration at its most fundamental level; it is left simple and concise. Expansion will come later.
+
+I used some code from Tom Krcha's [getting-started-plugin](https://github.com/adobe-photoshop/generator-getting-started "getting-started-plugin") - this provided a good foundation for my plugin and the features I would add. Big thanks to him and the others out there that made great tutorials employing Photoshop-Generator and Nodejs:
+
++ **Andy Hall:** [Node.js + Photoshop: How Comments Feed Design and Generator](http://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/), [JSConf.Asia 2013](http://www.youtube.com/watch?v=wqmMqB91zdI)
+
++ **Tom Krcha:** [Script Your First Adobe Generator Plugin For Photoshop](http://tomkrcha.com/?p=3896)
+
++ **Lee Brimelow:** [Introduction to Photoshop Generator](http://www.youtube.com/watch?v=lmSKgiY0ZPM)
+
+The purpose of writing this post is to explain and understand the OSC implementation that is happening in my plugin. I'd like to clear up any areas of the code that are prone to confusion, and that may have caused myself some frustration.
+
+To follow along, you'll need:
+
+Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core), [Node.js](http://nodejs.org/), [Osculator](http://www.osculator.net/), [Openbuttkiss](https://github.com/Samelot/openbuttkiss)
+
 ## Installation
 
-1. Download [openbuttkiss]().
+1. Download [openbuttkiss](https://github.com/Samelot/openbuttkiss).
 
-2. In terminal, cd to the plugin folder and run `npm install` to download any dependencies.
+2. In terminal, cd to the plugin folder (openbuttkiss) and run `npm install` to download any dependencies.
 
 3. Follow one of the methods below to set up the plugin with a Photoshop Generator.
 
 **Built-in Generator**
 
-> Place the plugin inside the Photoshop plug-ins folder:
+> Place the plugin inside the Photoshop Plug-ins folder:
 >
 > `Applications/Adobe Photoshop CC/Plug-ins/Generator`
 >
@@ -60,17 +59,21 @@ Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core
 > Go to `Photoshop > Preferences > Plug-ins`
 > and check `Enable Generator`. You may need to restart Photoshop for this to take effect.
 
+<!-- Enable Remote Connections -->
+
 **External Generator**
 
 > Run the plugin from a locally cloned [generator-core](https://github.com/adobe-photoshop/generator-core) library (think of this as our external generator, which exists outside of the Photoshop application). My workflow consists of having all my plugins inside the generator-core plugins folder.
 >
 > ![External Generator plugin location](/images/external-plugin-folder.png "Plugins to be run by External Generator")
 >
-> In terminal, cd to generator-core and run:
+> In terminal, cd to `generator-core` and run:
 >
 > `node app.js -f test/plugins/openbuttkiss`
 >
 > This app.js contains all the magic needed to run our plugin. The plugin location is specified at the end of the command.
+
+<!-- generator-core plugins folder? test/plugins or plugins -->
 
 Photoshop can use Built-in and External Generators to process a plugin; each generator provides a slightly different workflow. Regardless of which generator is being used, the plugin should produce the same results. Be aware that conflicts may arise when using both internal and external generators. In my experience, I had to disable the built-in generator to properly run openbuttkiss with the external generator.
 
@@ -80,19 +83,19 @@ Photoshop can use Built-in and External Generators to process a plugin; each gen
 
 After completing the above steps, openbuttkiss should now be available for use. In Photoshop, select the plugin from the drop down menu:
 
-`File > Generate > Openbuttkiss`
+`File > Generate > openbuttkiss`
 
-**Plugin being run by Built-in Generator**
+**Plugin being run by the Built-in Generator**
 
 ![built-in generator running our plugin](/images/internal-generators.png "Run a plugin with Built-in Generator")
 
-**Plugin being run by External Generator**
+**Plugin being run by an External Generator**
 
 ![external generator running our plugin](/images/external-generators.png "Run a plugin with External Generator")
 
 When selected, the plugin name in the Generate dropdown menu should be checked, telling us and Photoshop that it's enabled. To disable the plugin, select it again.
 
-Now that we are running openbuttkiss, we are ready to send it some OSC action. We will need to find a program that can handle sending/recieving OSC messages. The two I use are Osculator and Max/MSP. Later posts use will use Max/MSP to excite our Photoshop workflow. Here, I use [Osculator](http://www.osculator.net/ "Osculator website"), which is free and fully functional to download, minus the 20 second timeouts.
+Now that we're running openbuttkiss, we are ready to send it some OSC action. We'll need to use a program that can handle sending/recieving OSC messages. Here, I'll be using [Osculator](http://www.osculator.net/ "Osculator website"), which is free and fully functional to download, minus the 20 second timeouts.
 
 **Configuring Osculator**
 
@@ -114,9 +117,9 @@ Now that we are running openbuttkiss, we are ready to send it some OSC action. W
 
 Done!
 
-Our new OSC message should now be targeting the address we specified earlier. We should now be able to send it to Photoshop. Do this by clicking on the small grey box/square of the message we just created, it should flash green.
+Our new OSC message should now be targeting the address we specified earlier. We should now be able to send it to Photoshop. Do this by clicking the small grey box on the left hand side of the message we just created, it should flash green.
 
-If everything went over smoothly, when we trigger the message in Osculator, we should see the foreground and background colors swap in Photoshop. Remember that openbuttkiss must be enabled.
+If everything went over smoothly, when we trigger the message in Osculator, we should see the foreground and background colors swap in Photoshop. Remember that openbuttkiss must be enabled in Photoshop.
 
 ## Plugin Code
 
@@ -140,7 +143,7 @@ If everything went over smoothly, when we trigger the message in Osculator, we s
 
 + The `"generator-core-version"` field tells us what version of generator we are using. In my experience, a version below 2 would render the plugin incompatible.
 
-+ The `"dependencies"` field lists any dependencies that our plugin requires. Node-osc is the module our plugin uses to process OSC messages. If you look at node-osc's package.json, you will find that node-osc requires another nodejs module, osc-min. Check out some other popular [nodejs OSC modules](https://nodejsmodules.org/tags/osc), maybe you'll find one you really like!
++ The `"dependencies"` field lists any dependencies that our plugin requires to run. Node-osc is the module our plugin uses to process OSC messages. As a matter of fact, if you were to look at node-osc's package.json, you'd find that node-osc requires another nodejs module, osc-min. This module was used in the original [buttkiss](https://github.com/maxenglander/buttkisshttps://github.com/maxenglander/buttkiss "our first osc-ps implementation"). Check out some other popular [nodejs OSC modules](https://nodejsmodules.org/tags/osc) - maybe you'll find one you really like!
 
 **main.js**
 
@@ -233,7 +236,9 @@ _bubbahjubbah transmits two arguments each time it is triggered_
 |[ 'bubbahjubbah', 1 ]|bubbahjubbah|1|
 |[ 'bubbahjubbah', 0 ]|bubbahjubbah|0|
 
-I'm sure node-osc and other Nodejs OSC modules allow for a more elaborate parsing of messages. I haven't fully explored Open Sound Control, and my involvment with it has not surpassed a most basic usage. The benefits of osc seem to be in its ability to develop a rich organization of flexible parameter names. Openbuttkiss keeps clear of all that. Its only interest is a message, any message, with an argument of 1.
+I'm sure node-osc and other Nodejs OSC modules allow for a more elaborate parsing of messages. I haven't fully explored Open Sound Control, and my involvment with it has not surpassed a most basic usage. The benefits of osc seem to be in its ability to develop a rich organization of flexible parameter names. Openbuttkiss keeps clear of all that. Its only interest is a message, of any address, with an argument of 1.
+
+<!-- of any address, of any messages? -->
 
 **For more info on Open Sound Control**
 
