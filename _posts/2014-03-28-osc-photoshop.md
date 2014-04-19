@@ -21,7 +21,9 @@ custom_sub: osc+pd
 
 ## Overview and Requirements
 
-In this post, we'll setup Photoshop to use OSC (Open Sound Control).
+In this post, we'll setup Photoshop to use OSC (Open Sound Control). If your curious about what this looks like, and you want to see it with your eyes before you try it with your thighs, [watch this demo video](https://vimeo.com/92411743).
+
+<!-- If your curious about what this looks like, and you want to see it with your eyes before you try it with your thighs, [click here](https://vimeo.com/92411743). -->
 
 <!-- If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge](). -->
 
@@ -116,6 +118,8 @@ Now that we're running openbuttkiss, we are ready to send it some OSC action. We
 > 1. Click the empty message parameter under the `Event Type` column, select `OSC Routing` from the dropdown menu.
 >
 > 1. Click the empty message parameter under the `Value` column, select `Đ` from the dropdown menu.
+
+<!-- If you have any issues with doing this, see the video I made. In it, I set up Osculator to connect to our osc server. REWORD IF INCLUDED -->
 
 Done!
 
