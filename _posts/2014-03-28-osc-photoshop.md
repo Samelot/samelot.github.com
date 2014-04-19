@@ -21,7 +21,9 @@ custom_sub: osc+pd
 
 ## Overview and Requirements
 
-In this post, we'll setup Photoshop to use OSC (Open Sound Control). If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge]().
+In this post, we'll setup Photoshop to use OSC (Open Sound Control).
+
+<!-- If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge](). -->
 
 We'll use a Generator plugin called [Openbuttkiss](https://github.com/Samelot/openbuttkiss), which gives OSC messages access to Photoshop's API. More specifically, when an OSC message with an argument of 1 is recieved, the foreground and background colors are swapped. Utilized by this plugin is a Nodejs module that provides the protocols to communicate via OSC. I made the plugin to demonstrate this sort of integration at its most fundamental level; it is left simple and concise. Expansion will come later.
 
@@ -63,7 +65,7 @@ Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core
 
 **External Generator**
 
-> Run the plugin from a locally cloned [generator-core](https://github.com/adobe-photoshop/generator-core) library (think of this as our external generator, which exists outside of the Photoshop application). My workflow consists of having all my plugins inside the generator-core plugins folder.
+> Run the plugin from a locally cloned [generator-core](https://github.com/adobe-photoshop/generator-core) library (think of this as our external generator, which exists outside of the Photoshop application). Don't forget to `npm install`, to grab all the generator-core dependencies. My workflow when using this library consists of having all my plugins inside the generator-core plugins folder:
 >
 > ![External Generator plugin location](/images/external-plugin-folder.png "Plugins to be run by External Generator")
 >
@@ -107,7 +109,7 @@ Now that we're running openbuttkiss, we are ready to send it some OSC action. We
 >
 >    ![Osculator address](/images/osculator-address.png "Create a target to send our OSC messages to")
 >
-> 1. Click the `+` symbol located in the bottom left corner of the Parameters page. Exit the Parameters page.
+> 1. Click the `+` symbol located in the bottom left corner of the Parameters page. Close the Parameters page.
 >
 > 1. Go to `Routing > Manually Create Message...` Name it whatever you want and hit ok. A new message appears in the application window.
 >
@@ -131,7 +133,7 @@ If everything went over smoothly, when we trigger the message in Osculator, we s
     "description": "osc-ps plugin",
     "version": "0.0.0",
     "main": "main.js",
-    "generator-core-version": "~2",
+    "generator-core-version": ">=1.0.0",
     "dependencies": {
         "node-osc": "0.2.1"
     },
@@ -141,7 +143,7 @@ If everything went over smoothly, when we trigger the message in Osculator, we s
 
 + The `"main"` field tells us that main.js will be the primary entry point of the plugin.
 
-+ The `"generator-core-version"` field tells us what version of generator we are using. In my experience, a version below 2 would render the plugin incompatible.
++ The `"generator-core-version"` field tells us what version of generator we are using. Inaccurately specified version may render the plugin incompatible.
 
 + The `"dependencies"` field lists any dependencies that our plugin requires to run. Node-osc is the module our plugin uses to process OSC messages. As a matter of fact, if you were to look at node-osc's package.json, you'd find that node-osc requires another nodejs module, osc-min. This module was used in the original [buttkiss](https://github.com/maxenglander/buttkisshttps://github.com/maxenglander/buttkiss "our first osc-ps implementation"). Check out some other popular [nodejs OSC modules](https://nodejsmodules.org/tags/osc) - maybe you'll find one you really like!
 
@@ -150,6 +152,8 @@ If everything went over smoothly, when we trigger the message in Osculator, we s
 ~~~
 var oscR = require('node-osc'),
 ~~~
+
+<!-- Plural?? Retrieves. We aren't giving directions to a person. We are describing the program's direction. -->
 
 Retrieve the logic for receiving OSC messages. The logic comes from the node-osc dependency we installed earlier, which exists in the node_modules folder of our plugin.
 
