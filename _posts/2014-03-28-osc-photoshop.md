@@ -21,7 +21,7 @@ custom_sub: osc+pd
 
 ## Overview and Requirements
 
-In this post, we'll setup Photoshop to use OSC (Open Sound Control). If your curious about what this looks like, and you want to see it with your eyes before you try it with your thighs, [watch this demo video](https://vimeo.com/92411743).
+In this post, we'll setup Photoshop to use OSC (Open Sound Control). If your curious about what this looks like, and you want to see it before you try it, [check out this video](https://vimeo.com/92411743).
 
 <!-- If your curious about what this looks like, and you want to see it with your eyes before you try it with your thighs, [click here](https://vimeo.com/92411743). -->
 
