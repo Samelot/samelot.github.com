@@ -105,7 +105,7 @@ Now that we're running openbuttkiss, we are ready to send it some OSC action. We
 
 > 1. Open up Osculator.
 >
-1. Go to `View > Parameters`, or click on the `Parameters` icon. This page stores any OSC addresses we plan on communicating to, with each address, being stored as a target. Under the `OSC URL or choice from gear menu` column, double click on the empty address slot of target #1. Type in:
+> 1. Go to `View > Parameters`, or click on the `Parameters` icon. This page stores any OSC addresses we plan on communicating to, with each address, being stored as a target. Under the `OSC URL or choice from gear menu` column, double click on the empty address slot of target #1. Type in:
 >
 >    `osc.udp://localhost:3333`
 >

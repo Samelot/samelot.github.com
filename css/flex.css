@@ -37,7 +37,7 @@
 
 .blogItem {
     width:100%;
-    /*margin:4px;*/
+    margin:4px;
     border-bottom:0px solid rgba(180, 180, 180, .7);
     /*padding: 10px;*/
 }

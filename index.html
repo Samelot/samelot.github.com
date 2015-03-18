@@ -16,6 +16,32 @@ layout: allposts
         {% endfor %}
 
     </div>
+    <div class="blogItem">
+
+        <span>Photoshop Scripts</span>
+        {% for post in site.categories['blog'] reversed %}
+
+            {% if post.custom_sub == 'ps-scripts' %}
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            {%endif%}
+
+        {% endfor %}
+
+    </div>        
+    <!-- <div class="blogItem">
+
+        <span>Audio</span>
+        {% for post in site.categories['blog'] reversed %}
+
+            {% if post.custom_sub == 'audio' %}
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            {%endif%}
+
+        {% endfor %}
+
+    </div> -->
+
+
 
 </div>
 
