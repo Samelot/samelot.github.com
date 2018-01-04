@@ -2,6 +2,18 @@ name: "sizeoverload"
 description: "sizeoverload"
 paginate: 10
 
+safe:        false
+watch:       false    # deprecated
+server:      false    # deprecated
+host:        0.0.0.0
+port:        4000
+# baseurl:     /
+# url:         http://localhost:4000
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+include: [.nojekyll]
+
 permalink: /:categories/:title/
 highlighter: pygments
 
@@ -25,14 +37,6 @@ markdown_ext:  markdown,mkdown,mkdn,mkd,md
 textile_ext:   textile
 
 excerpt_separator: "\n\n"
-
-safe:        false
-watch:       false    # deprecated
-server:      false    # deprecated
-host:        0.0.0.0
-port:        4000
-baseurl:     /
-url:         http://localhost:4000
 
 maruku:
   use_tex:    false

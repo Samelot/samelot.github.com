@@ -1,3 +1,6 @@
-/_site/
-/_posts/_hide/
+_site
+.sass-cache
+.jekyll-metadata
+_posts/_hide/
 /css/reset.css
+_site/
