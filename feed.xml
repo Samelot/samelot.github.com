@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2018-01-04T11:19:24-05:00</updated><id>http://0.0.0.0:4000/</id><title type="html">sizeoverload</title><subtitle>sizeoverload</subtitle><entry><title type="html">Photoshop Index Color Script</title><link href="http://0.0.0.0:4000/blog/ps-indexcolor-script/" rel="alternate" type="text/html" title="Photoshop Index Color Script" /><published>2015-03-18T00:00:00-04:00</published><updated>2015-03-18T00:00:00-04:00</updated><id>http://0.0.0.0:4000/blog/ps-indexcolor-script</id><content type="html" xml:base="http://0.0.0.0:4000/blog/ps-indexcolor-script/">&lt;div class=&quot;blogNav&quot;&gt;
+  &lt;p&gt;&lt;span&gt;Photoshop Index Color Script&lt;/span&gt;&lt;/p&gt;
+
+  &lt;p class=&quot;alignleft&quot;&gt;&lt;a href=&quot;/blog/osc-photoshop/&quot;&gt;← Previous Post&lt;/a&gt;&lt;/p&gt;
+  &lt;p class=&quot;alignright&quot;&gt;&lt;/p&gt;
+  &lt;div style=&quot;clear: both;&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;The Magic Wand is the key tool for extracting elements from an image. Clicking on a designated area, or, designated pixel, incorporates similarly colored pixels into a new selection. &lt;!-- With this selection being ( something that is driven? ) derived/determined from/by our image information, we can manipulate that information to affect/influence our subsequent selections. --&gt;&lt;/p&gt;
+
+&lt;!-- WORDING Whenever I am unhappy with my magic wand selections - usually I am work sensibly, and they  - ... --&gt;
+
+&lt;p&gt;Whenever I find myself restricted&lt;!-- /limited --&gt; by the selections outputted by the Magic Wand, or if I just want to get some spontaneity in my selections, I’ll alter an image’s color information to determine subsequent selections that I make.&lt;/p&gt;
+
+&lt;!-- It is in complex detail - diverse overlapping ecosystems, or the fur of a striped tiger - where interference is likey to occur (with the Magic Wand). Sifting through such tightly woven/integrated color information, while maintaining an accurate selection, is a challenge. These probelmatic features/elements, restrict the path and locations to which a selection encompasses (may inhabit) can be altered to influences subsequent selections. Changing attributes at the image level, ie/aka the pixels themselves, provides for more drastic changes to our selections. --&gt;
+
+&lt;!-- ( It helps to know/(think about) that Photoshop is a pixel oriented/based program. As Photoshop is a pixel based program, knowing that each pixel must make up some color helps facilitate our use of the magic wand. ) --&gt;
+
+&lt;p&gt;Sometimes I’ll do this is by converting to indexed color mode, experiment with the forfeiting of color information. &lt;!-- When going from RGB to indexed color, the dialog popup lets you specify the target number of colors to convert to; for documents containing more colors than the number of colors target in conversion, these colors will be truncated, forced to be represented as a color in the schema/template. --&gt;Trying out dither options like diffusion, pattern, and noise can be affect what we see in our selections too. Observing the relationship between color information and magic wand selections, might help us drive/stylize the pixels of our image a certain way to influence selections we make later. I illustrate this workflow in this Photoshop script.&lt;/p&gt;
+
+&lt;!--
+boundries of this selection can be fine-tuned by/through Magic Wand's options (tolerance, anti-alias, etc), or by the Color Range and Refine Selection dialogs (screens), they do so with &quot;some&quot; (restricted) influence over the boundries of the selection, so in this post, I'll describe a different/another technique.
+
+As I use this Magic Wand quite often, I no longer feel baffled by its output. 
+
+I'd like to share some thoughts on Magic Wand use and how I've learned to tame, and even, direct the selections that I make with it.
+
+As I use this Magic Wand quite often, I no longer feel baffled by its output; some of my selections have reached the point(?) of being save-worthy.
+
+**altering an image's color information to determine subsequent selections that are made.**
+
+Sifting through such tightly woven/integrated color information, targeting their respective pixels, all while maintaing a proper selection is a challenge.
+
+While these options give &quot;some&quot; (restricted) influence over (the) selections output(ed) by the magic wand, changing attributes at the image level, ie/aka the pixels themselves, provides for more drastic changes to our selections.  
+
+How we restrict colors first in our images, then use the magic wand..
+
+... And what about the script I made to automate the process.
+
+my thoughts and ideas:
+
+by altering the color information of an image, we gain new further access to previous unselectable territories.
+
+and how their boundries (which offer some submission to malleability) but only do so along some a rigid, fixed contour. This contour seems to be mostly determined by the image's color.
+
+captured creatures creaturesque?
+
+There are of course many great ways in which this can be done. I'd like to share one of my ways of doing this, along with a script I made to automate the process.
+
+The images i'm interested in, for which I'd like to apply this procedure, often contain natural shapes and forms. 
+
+These things make up our world and share all its its intricacies, its physics, are difficult to (manually) replicate; cutting out, sampling these elements is not.
+
+use parts of that image utilize in my own work is what i want to do.
+
+Selecting elements from images is an 
+Creating and maintaing proper selections with the magic wand tool
+
+Maintaining control over selections in Photoshop 
+
+Maintaing selections made with the Magic Wand tool
+
+Selections made by the Magic Wand tool can seem unpredicatble unmaintainable, untameable
+
+can seem unresponsive and chaotic to its supplied
+
+Listed below are the sequence of actions executed by the script. They're described with some respect/accordance to the Photoshop's menu system and UI).
+
+Described below - with some accordance to Photoshop's menu system and UI - is the sequence of actions taken by the script.
+ --&gt;
+
+&lt;h2 id=&quot;overview-of-photoshop-script&quot;&gt;Overview of Photoshop Script&lt;/h2&gt;
+
+&lt;p&gt;Described below is the sequence of actions taken by the script.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;Set image mode to indexed ( &lt;code&gt;Image &amp;gt; Mode &amp;gt; Indexed Color...&lt;/code&gt; )&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Go into the color table ( &lt;code&gt;Image &amp;gt; Mode &amp;gt; Color Table...&lt;/code&gt; ) and replace the first 3 colors with the colors: red, green, and blue.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Set mode back to RGB ( &lt;code&gt;Image &amp;gt; Mode &amp;gt; Indexed Color...&lt;/code&gt; ).&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;For each color (red, green, blue), make a selection of that color. If a selection exists, create a new Photoshop layer and fill it with a shade of grey. Using the current selection, add a mask to each layer.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;&lt;em&gt;If a selection can’t be made from one of our colors (added into our color table), a layer will not be made. The script then moves onto the next color.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ps-indexcolor-blogpost/RicePatty1_1norm.png&quot; alt=&quot;RicePatty1 normal&quot; title=&quot;original image&quot; /&gt;
+&lt;img src=&quot;/images/ps-indexcolor-blogpost/RicePatty1_2rgb.png&quot; alt=&quot;RicePatty1 rgb&quot; title=&quot;rgb values added to color table&quot; /&gt;
+&lt;img src=&quot;/images/ps-indexcolor-blogpost/RicePatty1_3grey.png&quot; alt=&quot;RicePatty1 grey&quot; title=&quot;new layers with masks&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ps-indexcolor-blogpost/RicePatty2_1norm.png&quot; alt=&quot;RicePatty2 normal&quot; title=&quot;original image&quot; /&gt;
+&lt;img src=&quot;/images/ps-indexcolor-blogpost/RicePatty2_2rgb.png&quot; alt=&quot;RicePatty2 rgb&quot; title=&quot;rgb values added to color table&quot; /&gt;
+&lt;img src=&quot;/images/ps-indexcolor-blogpost/RicePatty2_3grey.png&quot; alt=&quot;RicePatty2 grey&quot; title=&quot;new layers with masks&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- The new colors are chosen from the array defined at the top of the script. As of this time, I have only created three possible colors within the array. If you'd like to increase the number of colors (colors to select), you will have to (please add) add new colors to the array. --&gt;
+
+&lt;!-- NOTE TO SELF: It seems as though tolerance and changing the image information (through indexed color) can yield very similar changes in selection output. --&gt;
+
+&lt;!-- FROM ONLINE: select pixels in an image based on shapes or by detecting object edges, the Magic Wand selects pixels based on tone and color. --&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#target photoshop
+var doc = app.activeDocument;
+var fuzz = 200;
+var shadeNumber = 3;
+var shadeValue = 110;
+
+var colorRange = new Array();
+colorRange[0] = {
+    red: 255,
+    green: 0,
+    blue: 0
+};
+colorRange[1] = {
+    red: 0,
+    green: 255,
+    blue: 0
+};
+colorRange[2] = {
+    red: 0,
+    green: 0,
+    blue: 255
+};
+
+function convertToDuotone() {
+    // write options for indexed color mode here 
+    myObject = new IndexedConversionOptions();
+    myObject.palette = Palette.LOCALADAPTIVE;
+    // how many colors to split/filter the image into
+    myObject.colors = shadeNumber;
+    doc.changeMode(ChangeMode.INDEXEDCOLOR, myObject);
+};
+
+function convertToRGB() {
+    doc.changeMode(ChangeMode.RGB);
+}
+
+function setColorTable() {
+    var idsetd = charIDToTypeID(&quot;setd&quot;);
+    var desc20 = new ActionDescriptor();
+    var idnull = charIDToTypeID(&quot;null&quot;);
+    var ref6 = new ActionReference();
+    var idClr = charIDToTypeID(&quot;Clr &quot;);
+    var idClrT = charIDToTypeID(&quot;ClrT&quot;);
+    ref6.putProperty(idClr, idClrT);
+    desc20.putReference(idnull, ref6);
+    var idT = charIDToTypeID(&quot;T   &quot;);
+    var list1 = new ActionList();
+    for (var i = 0; i &amp;lt; shadeNumber; i++) {
+        var tableColor = new ActionDescriptor();
+        var idRd = charIDToTypeID(&quot;Rd  &quot;);
+        tableColor.putDouble(idRd, colorRange[i]['red']);
+        var idGrn = charIDToTypeID(&quot;Grn &quot;);
+        tableColor.putDouble(idGrn, colorRange[i]['green']);
+        var idBl = charIDToTypeID(&quot;Bl  &quot;);
+        tableColor.putDouble(idBl, colorRange[i]['blue']);
+        var idRGBC = charIDToTypeID(&quot;RGBC&quot;);
+        list1.putObject(idRGBC, tableColor);
+    }
+    desc20.putList(idT, list1);
+    var idTrnI = charIDToTypeID(&quot;TrnI&quot;);
+    desc20.putInteger(idTrnI, shadeNumber);
+    executeAction(idsetd, desc20, DialogModes.NO);
+}
+
+
+convertToDuotone();
+
+setColorTable();
+
+convertToRGB();
+
+doc.selection.deselect();
+
+
+for (var i = 0; i &amp;lt; 3; i++) {
+
+    var selectColour = new SolidColor();
+    selectColour.rgb.red = colorRange[i]['red'];
+    selectColour.rgb.green = colorRange[i]['green'];
+    selectColour.rgb.blue = colorRange[i]['blue'];
+
+    var scaleA = (selectColour.lab.a + 128.5) / 256;
+    var desc11 = new ActionDescriptor();
+    desc11.putInteger(charIDToTypeID(&quot;Fzns&quot;), fuzz);
+    var desc12 = new ActionDescriptor();
+    desc12.putDouble(charIDToTypeID(&quot;Lmnc&quot;), selectColour.lab.l);
+    desc12.putDouble(charIDToTypeID(&quot;A   &quot;), selectColour.lab.a + scaleA);
+    desc12.putDouble(charIDToTypeID(&quot;B   &quot;), selectColour.lab.b + scaleA);
+    desc11.putObject(charIDToTypeID(&quot;Mnm &quot;), charIDToTypeID(&quot;LbCl&quot;), desc12);
+    desc11.putObject(charIDToTypeID(&quot;Mxm &quot;), charIDToTypeID(&quot;LbCl&quot;), desc12);
+    executeAction(charIDToTypeID(&quot;ClrR&quot;), desc11, DialogModes.NO);
+    if (hasSelection() == true) {
+        var layerRef = doc.artLayers.add();
+
+        var desc140 = new ActionDescriptor();
+        desc140.putClass(charIDToTypeID('Nw  '), charIDToTypeID('Chnl'));
+        var ref51 = new ActionReference();
+        ref51.putEnumerated(charIDToTypeID('Chnl'), charIDToTypeID('Chnl'), charIDToTypeID('Msk '));
+        desc140.putReference(charIDToTypeID('At  '), ref51);
+        desc140.putEnumerated(charIDToTypeID('Usng'), charIDToTypeID('UsrM'), charIDToTypeID('RvlS'));
+        executeAction(charIDToTypeID('Mk  '), desc140, DialogModes.NO);
+        doc.activeChannels = [doc.channels[0], doc.channels[1], doc.channels[2]]
+
+        var myColor = new SolidColor();
+        myColor.rgb.red = myColor.rgb.green = myColor.rgb.blue = shadeValue;
+        app.activeDocument.selection.selectAll();
+
+        app.activeDocument.selection.fill(myColor, undefined, undefined, true);
+        app.activeDocument.selection.fill(myColor);
+        
+        if ((shadeValue+36) &amp;gt; 255)
+        {
+            shadeValue = 255;
+        } else {
+            shadeValue += 36;
+        };
+    };
+};
+
+function hasSelection() {
+    var ref = new ActionReference();
+    ref.putEnumerated(charIDToTypeID(&quot;Dcmn&quot;), charIDToTypeID(&quot;Ordn&quot;), charIDToTypeID(&quot;Trgt&quot;));
+    var docDesc = executeActionGet(ref);
+    var hasSelection = docDesc.hasKey(stringIDToTypeID(&quot;selection&quot;));
+    return hasSelection;
+};
+
+doc.selection.deselect();
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="blog" /><summary type="html">Photoshop Index Color Script ← Previous Post</summary></entry><entry><title type="html">Setup OSC communication for Photoshop</title><link href="http://0.0.0.0:4000/blog/osc-photoshop/" rel="alternate" type="text/html" title="Setup OSC communication for Photoshop" /><published>2014-03-28T00:00:00-04:00</published><updated>2014-03-28T00:00:00-04:00</updated><id>http://0.0.0.0:4000/blog/osc-photoshop</id><content type="html" xml:base="http://0.0.0.0:4000/blog/osc-photoshop/">&lt;!--
++ the or our : the/our : OUR/WE &lt; ok?
++ USE ARGUMENT&gt;&gt; NOT VALUE !!
++ swap vs swaps. Having now changed order of main.js code/code description!
++ plugin menu-state vs plugin's menu-state
++ internal/built-in... it's ok to use internal once or twice, but not enough to overpower our understanding.
++ don't get too into osculator.
++ extendscript is .JSX
++ capitalization
+--&gt;
+
+&lt;div class=&quot;blogNav&quot;&gt;
+  &lt;p&gt;&lt;span&gt;Setup OSC communication for Photoshop&lt;/span&gt;&lt;/p&gt;
+
+  &lt;p class=&quot;alignleft&quot;&gt;&lt;/p&gt;
+  &lt;p class=&quot;alignright&quot;&gt;&lt;a href=&quot;/blog/ps-indexcolor-script/&quot;&gt;Next Post →&lt;/a&gt;&lt;/p&gt;
+  &lt;div style=&quot;clear: both;&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;overview-and-requirements&quot;&gt;Overview and Requirements&lt;/h2&gt;
+
+&lt;p&gt;In this post, we’ll setup Photoshop to use OSC (Open Sound Control). &lt;!-- If your curious about what this looks like, and you want to see it before you try it, [check out this video](https://vimeo.com/92411743). --&gt;&lt;/p&gt;
+
+&lt;!-- If your curious about what this looks like, and you want to see it with your eyes before you try it with your thighs, [click here](https://vimeo.com/92411743). --&gt;
+
+&lt;!-- If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge](). --&gt;
+
+&lt;p&gt;We’ll use a Generator plugin called &lt;a href=&quot;https://github.com/Samelot/openbuttkiss&quot;&gt;Openbuttkiss&lt;/a&gt;, which gives OSC messages access to Photoshop’s API. More specifically, when an OSC message with an argument of 1 is recieved, the foreground and background colors are swapped. Utilized by this plugin is a Nodejs module that provides the protocols to communicate via OSC. I made the plugin to demonstrate this sort of integration at its most fundamental level; it is left simple and concise. Expansion will come later.&lt;/p&gt;
+
+&lt;p&gt;I used some code from Tom Krcha’s &lt;a href=&quot;https://github.com/adobe-photoshop/generator-getting-started&quot; title=&quot;getting-started-plugin&quot;&gt;getting-started-plugin&lt;/a&gt; - this provided a good foundation for my plugin and the features I would add. Big thanks to him and the others out there that made great tutorials employing Photoshop-Generator and Nodejs:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Andy Hall:&lt;/strong&gt; &lt;a href=&quot;http://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/&quot;&gt;Node.js + Photoshop: How Comments Feed Design and Generator&lt;/a&gt;, &lt;a href=&quot;http://www.youtube.com/watch?v=wqmMqB91zdI&quot;&gt;JSConf.Asia 2013&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Tom Krcha:&lt;/strong&gt; &lt;a href=&quot;http://tomkrcha.com/?p=3896&quot;&gt;Script Your First Adobe Generator Plugin For Photoshop&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Lee Brimelow:&lt;/strong&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=lmSKgiY0ZPM&quot;&gt;Introduction to Photoshop Generator&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The purpose of writing this post is to explain and understand the OSC implementation that is happening in my plugin. I’d like to clear up any areas of the code that are prone to confusion, and that may have caused myself some frustration.&lt;/p&gt;
+
+&lt;p&gt;To follow along, you’ll need:&lt;/p&gt;
+
+&lt;p&gt;Photoshop CC, &lt;a href=&quot;https://github.com/adobe-photoshop/generator-core&quot;&gt;Generator-Core&lt;/a&gt;, &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;, &lt;a href=&quot;http://www.osculator.net/&quot;&gt;Osculator&lt;/a&gt;, &lt;a href=&quot;https://github.com/Samelot/openbuttkiss&quot;&gt;Openbuttkiss&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download &lt;a href=&quot;https://github.com/Samelot/openbuttkiss&quot;&gt;openbuttkiss&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In terminal, cd to the plugin folder (openbuttkiss) and run &lt;code&gt;npm install&lt;/code&gt; to download any dependencies.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Follow one of the methods below to set up the plugin with a Photoshop Generator.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Built-in Generator&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Place the plugin inside the Photoshop Plug-ins folder:&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;Applications/Adobe Photoshop CC/Plug-ins/Generator&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/images/internal-plugin-folder.png&quot; alt=&quot;Built-in Generator plugin location&quot; title=&quot;Plugins to be run by Built-in Generator&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;Open Photoshop.
+Go to &lt;code&gt;Photoshop &amp;gt; Preferences &amp;gt; Plug-ins&lt;/code&gt;
+and check &lt;code&gt;Enable Generator&lt;/code&gt;. You may need to restart Photoshop for this to take effect.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- Enable Remote Connections --&gt;
+
+&lt;p&gt;&lt;strong&gt;External Generator&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Run the plugin from a locally cloned &lt;a href=&quot;https://github.com/adobe-photoshop/generator-core&quot;&gt;generator-core&lt;/a&gt; library (think of this as our external generator, which exists outside of the Photoshop application). Don’t forget to &lt;code&gt;npm install&lt;/code&gt;, to grab all the generator-core dependencies. My workflow when using this library consists of having all my plugins inside the generator-core plugins folder:&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;/images/external-plugin-folder.png&quot; alt=&quot;External Generator plugin location&quot; title=&quot;Plugins to be run by External Generator&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;In terminal, cd to &lt;code&gt;generator-core&lt;/code&gt; and run:&lt;/p&gt;
+
+  &lt;p&gt;&lt;code&gt;node app.js -f test/plugins/openbuttkiss&lt;/code&gt;&lt;/p&gt;
+
+  &lt;p&gt;This app.js contains all the magic needed to run our plugin. The plugin location is specified at the end of the command.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- generator-core plugins folder? test/plugins or plugins --&gt;
+
+&lt;p&gt;Photoshop can use Built-in and External Generators to process a plugin; each generator provides a slightly different workflow. Regardless of which generator is being used, the plugin should produce the same results. Be aware that conflicts may arise when using both internal and external generators. In my experience, I had to disable the built-in generator to properly run openbuttkiss with the external generator.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/adobe-photoshop/generator-core/wiki/Generator-Architecture&quot;&gt;Read more on Photoshop Generators and the Generator Architecture&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;running&quot;&gt;Running&lt;/h2&gt;
+
+&lt;p&gt;After completing the above steps, openbuttkiss should now be available for use. In Photoshop, select the plugin from the drop down menu:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;File &amp;gt; Generate &amp;gt; openbuttkiss&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Plugin being run by the Built-in Generator&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/internal-generators.png&quot; alt=&quot;built-in generator running our plugin&quot; title=&quot;Run a plugin with Built-in Generator&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Plugin being run by an External Generator&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/external-generators.png&quot; alt=&quot;external generator running our plugin&quot; title=&quot;Run a plugin with External Generator&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When selected, the plugin name in the Generate dropdown menu should be checked, telling us and Photoshop that it’s enabled. To disable the plugin, select it again.&lt;/p&gt;
+
+&lt;p&gt;Now that we’re running openbuttkiss, we are ready to send it some OSC action. We’ll need to use a program that can handle sending/recieving OSC messages. Here, I’ll be using &lt;a href=&quot;http://www.osculator.net/&quot; title=&quot;Osculator website&quot;&gt;Osculator&lt;/a&gt;, which is free and fully functional to download, minus the 20 second timeouts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Configuring Osculator&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;Open up Osculator.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Go to &lt;code&gt;View &amp;gt; Parameters&lt;/code&gt;, or click on the &lt;code&gt;Parameters&lt;/code&gt; icon. This page stores any OSC addresses we plan on communicating to, with each address, being stored as a target. Under the &lt;code&gt;OSC URL or choice from gear menu&lt;/code&gt; column, double click on the empty address slot of target #1. Type in:&lt;/p&gt;
+
+      &lt;p&gt;&lt;code&gt;osc.udp://localhost:3333&lt;/code&gt;&lt;/p&gt;
+
+      &lt;p&gt;&lt;img src=&quot;/images/osculator-address.png&quot; alt=&quot;Osculator address&quot; title=&quot;Create a target to send our OSC messages to&quot; /&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Click the &lt;code&gt;+&lt;/code&gt; symbol located in the bottom left corner of the Parameters page. Close the Parameters page.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Go to &lt;code&gt;Routing &amp;gt; Manually Create Message...&lt;/code&gt; Name it whatever you want and hit ok. A new message appears in the application window.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Click the empty message parameter under the &lt;code&gt;Event Type&lt;/code&gt; column, select &lt;code&gt;OSC Routing&lt;/code&gt; from the dropdown menu.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Click the empty message parameter under the &lt;code&gt;Value&lt;/code&gt; column, select &lt;code&gt;Đ&lt;/code&gt; from the dropdown menu.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- If you have any issues with doing this, see the video I made. In it, I set up Osculator to connect to our osc server. REWORD IF INCLUDED --&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;p&gt;Our new OSC message should now be targeting the address we specified earlier. We should now be able to send it to Photoshop. Do this by clicking the small grey box on the left hand side of the message we just created, it should flash green.&lt;/p&gt;
+
+&lt;p&gt;If everything went over smoothly, when we trigger the message in Osculator, we should see the foreground and background colors swap in Photoshop. Remember that openbuttkiss must be enabled in Photoshop.&lt;/p&gt;
+
+&lt;h2 id=&quot;plugin-code&quot;&gt;Plugin Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;package.json&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &quot;name&quot;: &quot;openbuttkiss&quot;,
+    &quot;description&quot;: &quot;osc-ps plugin&quot;,
+    &quot;version&quot;: &quot;0.0.0&quot;,
+    &quot;main&quot;: &quot;main.js&quot;,
+    &quot;generator-core-version&quot;: &quot;&amp;gt;=1.0.0&quot;,
+    &quot;dependencies&quot;: {
+        &quot;node-osc&quot;: &quot;0.2.1&quot;
+    },
+    &quot;devDependencies&quot;: {}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;&quot;main&quot;&lt;/code&gt; field tells us that main.js will be the primary entry point of the plugin.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;&quot;generator-core-version&quot;&lt;/code&gt; field tells us what version of generator we are using. Inaccurately specified version may render the plugin incompatible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;&quot;dependencies&quot;&lt;/code&gt; field lists any dependencies that our plugin requires to run. Node-osc is the module our plugin uses to process OSC messages. As a matter of fact, if you were to look at node-osc’s package.json, you’d find that node-osc requires another nodejs module, osc-min. This module was used in the original &lt;a href=&quot;https://github.com/maxenglander/buttkisshttps://github.com/maxenglander/buttkiss&quot; title=&quot;our first osc-ps implementation&quot;&gt;buttkiss&lt;/a&gt;. Check out some other popular &lt;a href=&quot;https://nodejsmodules.org/tags/osc&quot;&gt;nodejs OSC modules&lt;/a&gt; - maybe you’ll find one you really like!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;main.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var oscR = require('node-osc'),
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- Plural?? Retrieves. We aren't giving directions to a person. We are describing the program's direction. --&gt;
+
+&lt;p&gt;Retrieve the logic for receiving OSC messages. The logic comes from the node-osc dependency we installed earlier, which exists in the node_modules folder of our plugin.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;oscServer = new oscR.Server(3333, '127.0.0.1'),
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create an osc server and assign it to the variable oscServer. Server initialization happens when we run the plugin from terminal, or, if using the internal/built-in Generator, whenever we start up Photoshop. Once we set up a listerner, our server will be able to recieve incoming osc messages at 127.0.0.1 (localhost), port 3333.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Don’t get the oscServer mixed up with our server listener, they are two different things.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;toggler = 0,
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Toggler gets assigned either a 0 or 1 based on the plugin’s menu-state - whether is is checked or unchecked.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0 = disabled / unchecked&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1 = enabled / checked&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;psToFront = &quot;app.bringToFront();&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Switch to Photoshop application. Bring it to the front of any other applications we have open. Must be passed to _generator.evaluateJSXString().&lt;/p&gt;
+
+&lt;!-- {:.break-me} --&gt;
+
+&lt;pre&gt;&lt;code&gt;var colorFlip = &quot;var fColor = app.foregroundColor;
+    app.foregroundColor = app.backgroundColor;
+    app.backgroundColor = fColor;&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Swap foreground and background colors. Both colorFlip and psToFront are extendscript code (.jsx) and must be handled differently than other javascript in main.js. They are passed through _generator.evaluateJSXString(). I got stuck on this when I first tried to use extendscript in my Generator plugins - &lt;a href=&quot;https://github.com/adobe-photoshop/generator-core/issues/138&quot; title=&quot;thx Joel&quot;&gt;Check out my issue at Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;oscServer.on(&quot;message&quot;, function (msg, rinfo) {
+    if(toggler==1 &amp;amp;&amp;amp; msg[1]==1){
+        actions();
+    }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;oscServer.on is the server’s listener - it listens for incoming osc messages. The plugin must be enabled at least once for the listener to initialize. After that, the server will always be listening, choosing whether or not to execute actions() based on the conditions of the if statement. If these conditions are not met, the message will still be recieved, but nothing will be done.&lt;/p&gt;
+
+&lt;p&gt;There are probebly other ways in which our plugin menu-state can influence our OSC server and server listener. To enable/disable these components, in accordance to our our menu-state, might be a better alternative to our current setup.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function actions(){
+    _generator.evaluateJSXString(colorFlip);
+    _generator.evaluateJSXString(psToFront);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Called from our oscServer.on, this function executes two things, colorFlip followed by our psToFront. Both of these are passed to _generator.evaluateJSXString().&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if(checked==true) {
+    toggler = 1;
+    console.log(&quot;OSC enabled!&quot;);
+} else {
+    toggler = 0;
+    console.log(&quot;OSC disabled!&quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Inside the onMenuClicked() function. Each time the plugin’s menu-state changes, an if / else statement is executed, setting toggler to 0 or 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;understanding-osc-messages&quot;&gt;Understanding OSC Messages&lt;/h2&gt;
+
+&lt;p&gt;Node-osc gives us access to different parts of our osc message.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;msg[0] retrieves the address of the message&lt;/li&gt;
+  &lt;li&gt;msg[1] retrieves the argument (value) of the message&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The message bubbahjubbah, sent from Osculator to openbuttkiss, could be broken down like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;bubbahjubbah transmits two arguments each time it is triggered&lt;/em&gt;&lt;/p&gt;
+
+&lt;table class=&quot;table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;msg&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;msg[0]&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;msg[1]&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;[ ‘bubbahjubbah’, 1 ]&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;bubbahjubbah&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;[ ‘bubbahjubbah’, 0 ]&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;bubbahjubbah&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I’m sure node-osc and other Nodejs OSC modules allow for a more elaborate parsing of messages. I haven’t fully explored Open Sound Control, and my involvment with it has not surpassed a most basic usage. The benefits of osc seem to be in its ability to develop a rich organization of flexible parameter names. Openbuttkiss keeps clear of all that. Its only interest is a message, of any address, with an argument of 1.&lt;/p&gt;
+
+&lt;!-- of any address, of any messages? --&gt;
+
+&lt;p&gt;&lt;strong&gt;For more info on Open Sound Control&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://opensoundcontrol.org/spec-1_0&quot;&gt;Open Sound Control 1.0 Specification&lt;/a&gt;, &lt;a href=&quot;http://cnmat.berkeley.edu/system/files/attachments/Nime09OSCfinal.pdf&quot;&gt;Features and Future of Open Sound Control 1.1&lt;/a&gt;, &lt;a href=&quot;http://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf&quot;&gt;Control of VST Plug-ins Using OSC&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="blog" /><summary type="html"></summary></entry><entry><title type="html">yoshi</title><link href="http://0.0.0.0:4000/pics/yoshi/" rel="alternate" type="text/html" title="yoshi" /><published>2014-01-01T00:00:00-05:00</published><updated>2014-01-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/pics/yoshi</id><content type="html" xml:base="http://0.0.0.0:4000/pics/yoshi/">&lt;p&gt;&lt;img class=&quot;picsItem&quot; src=&quot;/images/morepicsforweb/.png&quot; alt=&quot;yoshi&quot; title=&quot;yoshi&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="pics" /><summary type="html"></summary></entry><entry><title type="html">yoshi</title><link href="http://0.0.0.0:4000/pics/pics/" rel="alternate" type="text/html" title="yoshi" /><published>2014-01-01T00:00:00-05:00</published><updated>2014-01-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/pics/pics</id><content type="html" xml:base="http://0.0.0.0:4000/pics/pics/">&lt;p&gt;&lt;img class=&quot;picsItem&quot; src=&quot;/images/morepicsforweb/.png&quot; alt=&quot;yoshi&quot; title=&quot;yoshi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;altYoshi_05altFingers_12slugtrunk_03bunnybot_03bunnybot_08legs_20derek_02goober_65goober_36goober_03goober_23limbs_02limbs_05&lt;/p&gt;</content><author><name></name></author><category term="pics" /><summary type="html">altYoshi_05altFingers_12slugtrunk_03bunnybot_03bunnybot_08legs_20derek_02goober_65goober_36goober_03goober_23limbs_02limbs_05</summary></entry></feed>
