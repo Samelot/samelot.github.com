@@ -3,7 +3,19 @@ description: "sizeoverload"
 paginate: 10
 
 permalink: /:categories/:title/
-pygments: true
+highlighter: pygments
+
+enable_coderay         : true  
+syntax_highlighter     : coderay  
+syntax_highlighter_opts: {}  
+
+# coderay:
+#   coderay_wrap: div
+#   coderay_line_numbers: inline
+#   coderay_line_numbers_start: 1
+#   coderay_tab_width: 4
+#   coderay_bold_every: 10
+#   coderay_css: style
 
 lsi: false
 source: .
@@ -44,14 +56,6 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   use_coderay: false
   parse_block_html: true
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
 
 redcloth:
   hard_breaks: true
