@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -155,26 +154,3 @@
 
 
 
-=======
----
-title: Pics and visuals - sizeoverload
-layout: allposts
----
-{% for post in site.categories.pics %}
-    {% if post.category == 'pics' %}
-        {% capture position %}{{post.custom_spritePos}}{% endcapture %}
-        {% capture width %}{{post.custom_spritePos}}{% endcapture %}
-        {% capture frequency %}{{post.custom_spriteFreq}}{% endcapture %}
-
-		{% assign idx = '0' %}
-
-		{% for custom_pics in post.custom_pics %}
-
-        <div class="flexContainer artRow">
-            <img class="picsItem" src="/images/morepicsforweb/{{post.custom_pics[forloop.index0]}}.png" alt="{{page.title}}" title="{{page.title}}">
-        </div>
-
-		{% endfor %}
-    {% endif %}
-{% endfor %}
->>>>>>> 01823ecf7965782203d701638b84d6b88da9e559
