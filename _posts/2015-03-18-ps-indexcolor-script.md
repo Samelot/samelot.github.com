@@ -2,7 +2,7 @@
 title: Photoshop Index Color Script
 layout: blogpost
 category: blog
-custom_sub: ps-scripts
+custom_sub: ps
 ---
 
 {% include injectblognav.html %}

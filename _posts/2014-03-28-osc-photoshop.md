@@ -2,7 +2,7 @@
 title: Setup OSC communication for Photoshop
 layout: blogpost
 category: blog
-custom_sub: osc+pd
+custom_sub: ps
 ---
 <!--
 + the or our : the/our : OUR/WE < ok?
@@ -15,6 +15,7 @@ custom_sub: osc+pd
 + capitalization
 -->
 
+<!-- DELETE? -->
 {% include injectbullet.html %}
 
 {% include injectblognav.html %}
@@ -33,9 +34,9 @@ I used some code from Tom Krcha's [getting-started-plugin](https://github.com/ad
 
 + **Andy Hall:** [Node.js + Photoshop: How Comments Feed Design and Generator](http://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/), [JSConf.Asia 2013](http://www.youtube.com/watch?v=wqmMqB91zdI)
 
-+ **Tom Krcha:** [Script Your First Adobe Generator Plugin For Photoshop](http://tomkrcha.com/?p=3896)
-
 + **Lee Brimelow:** [Introduction to Photoshop Generator](http://www.youtube.com/watch?v=lmSKgiY0ZPM)
+
++ **Tom Krcha:** can no longer locate videos
 
 The purpose of writing this post is to explain and understand the OSC implementation that is happening in my plugin. I'd like to clear up any areas of the code that are prone to confusion, and that may have caused myself some frustration.
 
@@ -248,6 +249,8 @@ I'm sure node-osc and other Nodejs OSC modules allow for a more elaborate parsin
 
 <!-- of any address, of any messages? -->
 
-**For more info on Open Sound Control**
+**For more info on Open Sound Control:**
 
-[Open Sound Control 1.0 Specification](http://opensoundcontrol.org/spec-1_0 ), [Features and Future of Open Sound Control 1.1](http://cnmat.berkeley.edu/system/files/attachments/Nime09OSCfinal.pdf ), [Control of VST Plug-ins Using OSC](http://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf )
++ [Open Sound Control 1.0 Specification](http://opensoundcontrol.org/spec-1_0 )
+
++ [Control of VST Plug-ins Using OSC](http://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf )
