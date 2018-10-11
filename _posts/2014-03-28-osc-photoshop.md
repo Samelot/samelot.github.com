@@ -32,9 +32,9 @@ We'll use a Generator plugin called [Openbuttkiss](https://github.com/Samelot/op
 
 I used some code from Tom Krcha's [getting-started-plugin](https://github.com/adobe-photoshop/generator-getting-started "getting-started-plugin") - this provided a good foundation for my plugin and the features I would add. Big thanks to him and the others out there that made great tutorials employing Photoshop-Generator and Nodejs:
 
-+ **Andy Hall:** [Node.js + Photoshop: How Comments Feed Design and Generator](http://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/), [JSConf.Asia 2013](http://www.youtube.com/watch?v=wqmMqB91zdI)
++ **Andy Hall:** [Node.js + Photoshop: How Comments Feed Design and Generator](https://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/), [JSConf.Asia 2013](https://www.youtube.com/watch?v=wqmMqB91zdI)
 
-+ **Lee Brimelow:** [Introduction to Photoshop Generator](http://www.youtube.com/watch?v=lmSKgiY0ZPM)
++ **Lee Brimelow:** [Introduction to Photoshop Generator](https://www.youtube.com/watch?v=lmSKgiY0ZPM)
 
 + **Tom Krcha:** can no longer locate videos
 
@@ -42,7 +42,7 @@ The purpose of writing this post is to explain and understand the OSC implementa
 
 To follow along, you'll need:
 
-Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core), [Node.js](http://nodejs.org/), [Osculator](http://www.osculator.net/), [Openbuttkiss](https://github.com/Samelot/openbuttkiss)
+Photoshop CC, [Generator-Core](https://github.com/adobe-photoshop/generator-core), [Node.js](https://nodejs.org/), [Osculator](https://www.osculator.net/), [Openbuttkiss](https://github.com/Samelot/openbuttkiss)
 
 ## Installation
 
@@ -100,7 +100,7 @@ After completing the above steps, openbuttkiss should now be available for use. 
 
 When selected, the plugin name in the Generate dropdown menu should be checked, telling us and Photoshop that it's enabled. To disable the plugin, select it again.
 
-Now that we're running openbuttkiss, we are ready to send it some OSC action. We'll need to use a program that can handle sending/recieving OSC messages. Here, I'll be using [Osculator](http://www.osculator.net/ "Osculator website"), which is free and fully functional to download, minus the 20 second timeouts.
+Now that we're running openbuttkiss, we are ready to send it some OSC action. We'll need to use a program that can handle sending/recieving OSC messages. Here, I'll be using [Osculator](https://www.osculator.net/ "Osculator website"), which is free and fully functional to download, minus the 20 second timeouts.
 
 **Configuring Osculator**
 
@@ -251,6 +251,6 @@ I'm sure node-osc and other Nodejs OSC modules allow for a more elaborate parsin
 
 **For more info on Open Sound Control:**
 
-+ [Open Sound Control 1.0 Specification](http://opensoundcontrol.org/spec-1_0 )
++ [Open Sound Control 1.0 Specification](https://opensoundcontrol.org/spec-1_0 )
 
-+ [Control of VST Plug-ins Using OSC](http://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf )
++ [Control of VST Plug-ins Using OSC](https://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf )

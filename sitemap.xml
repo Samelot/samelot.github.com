@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+      xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
+            https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-    <loc>http://sizeoverload.com/</loc>
+    <loc>https://sizeoverload.com/</loc>
     <changefreq>weekly</changefreq>
 </url>
 <url>
-    <loc>http://sizeoverload.com/pics/</loc>
+    <loc>https://sizeoverload.com/pics/</loc>
     <changefreq>weekly</changefreq>
 </url>
 <url>
-    <loc>http://sizeoverload.com/blog/osc-photoshop/</loc>
+    <loc>https://sizeoverload.com/blog/osc-photoshop/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 </url>

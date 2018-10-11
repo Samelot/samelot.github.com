@@ -30,7 +30,7 @@ Me and Daddio (not my dad), after just one year of HeyTell, have created a rathe
 <!-- How our database built so fast up. How we are HeyTell abusers. -->
 
 |:-:|:-:|
-|[![Get HeyTell](/images/ableton-reaper-blogpost/heytell-icon-small.png)](http://heytell.com/front.html)|HeyTell allows you and a friend to send each other rapid-fire voice messages. This works just like a modern day walkie-talkie.|
+|[![Get HeyTell](/images/ableton-reaper-blogpost/heytell-icon-small.png)](https://heytell.com/front.html)|HeyTell allows you and a friend to send each other rapid-fire voice messages. This works just like a modern day walkie-talkie.|
 {: .table-images .table-nobreak .heytellable}
 
 It would seem that our HeyTell duo is the greatest duo - being contributors to such an immense library of prolific content. Supporting our collaboration has probably caused HeyTell some considerable strain (server strain). Many times we’ll experience technical difficulties as we flood each other will our nonsensical blabberings. Their servers crash or something. Here’s what some of our messages might look like, transcribed:
