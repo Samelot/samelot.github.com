@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://yourdomain.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://yourdomain.com/" rel="alternate" type="text/html" /><updated>2018-07-12T06:30:37-04:00</updated><id>http://yourdomain.com/</id><title type="html">sizeoverload</title><subtitle>sizeoverload</subtitle><entry><title type="html">Tasker Tips 1: Intro</title><link href="http://yourdomain.com/blog/tasker-tips-1/" rel="alternate" type="text/html" title="Tasker Tips 1: Intro" /><published>2018-06-27T00:00:00-04:00</published><updated>2018-06-27T00:00:00-04:00</updated><id>http://yourdomain.com/blog/tasker-tips-1</id><content type="html" xml:base="http://yourdomain.com/blog/tasker-tips-1/">&lt;div class=&quot;blogNav&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="https://yourdomain.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yourdomain.com/" rel="alternate" type="text/html" /><updated>2018-10-11T10:05:40-04:00</updated><id>https://yourdomain.com/</id><title type="html">sizeoverload</title><subtitle>sizeoverload</subtitle><entry><title type="html">Tasker Tips 1: Intro</title><link href="https://yourdomain.com/blog/tasker-tips-1/" rel="alternate" type="text/html" title="Tasker Tips 1: Intro" /><published>2018-06-27T00:00:00-04:00</published><updated>2018-06-27T00:00:00-04:00</updated><id>https://yourdomain.com/blog/tasker-tips-1</id><content type="html" xml:base="https://yourdomain.com/blog/tasker-tips-1/">&lt;div class=&quot;blogNav&quot;&gt;
   &lt;p&gt;&lt;span&gt;Tasker Tips 1: Intro&lt;/span&gt;&lt;/p&gt;
 
   &lt;p class=&quot;alignleft&quot;&gt;&lt;a href=&quot;/blog/ps-indexcolor-script/&quot;&gt;← Previous Post&lt;/a&gt;&lt;/p&gt;
@@ -16,15 +16,15 @@
     &lt;p&gt;&lt;a href=&quot;https://forum.xda-developers.com/oneplus-5t/development/op5t-resurrection-remix-n-t3746009&quot;&gt;XDA forums&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://luis-builds.de/downloads/lineageos/rr/oneplus5t/&quot;&gt;luis-builds.de&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://luis-builds.de/downloads/lineageos/rr/oneplus5t/&quot;&gt;luis-builds.de&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For those more curious about this ROM, &lt;a href=&quot;http://en.miui.com/thread-616732-1-1.html&quot;&gt;check out this in-depth review&lt;/a&gt;. It provides a very detailed inspection on the many screens and configuration options. This ROM is the first custom ROM I’ve ever used and I found it to be magnificent!&lt;/p&gt;
+&lt;p&gt;For those more curious about this ROM, &lt;a href=&quot;https://en.miui.com/thread-616732-1-1.html&quot;&gt;check out this in-depth review&lt;/a&gt;. It provides a very detailed inspection on the many screens and configuration options. This ROM is the first custom ROM I’ve ever used and I found it to be magnificent!&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;It seems the developer discontinued work on his Nougat RR ROM to focus more time on Oreo.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Enjoy :)&lt;/p&gt;</content><author><name></name></author><category term="blog" /><summary type="html">Tasker Tips 1: Intro ← Previous Post</summary></entry><entry><title type="html">Photoshop Index Color Script</title><link href="http://yourdomain.com/blog/ps-indexcolor-script/" rel="alternate" type="text/html" title="Photoshop Index Color Script" /><published>2015-03-18T00:00:00-04:00</published><updated>2015-03-18T00:00:00-04:00</updated><id>http://yourdomain.com/blog/ps-indexcolor-script</id><content type="html" xml:base="http://yourdomain.com/blog/ps-indexcolor-script/">&lt;div class=&quot;blogNav&quot;&gt;
+&lt;p&gt;Enjoy :)&lt;/p&gt;</content><author><name></name></author><category term="blog" /><summary type="html">Tasker Tips 1: Intro ← Previous Post</summary></entry><entry><title type="html">Photoshop Index Color Script</title><link href="https://yourdomain.com/blog/ps-indexcolor-script/" rel="alternate" type="text/html" title="Photoshop Index Color Script" /><published>2015-03-18T00:00:00-04:00</published><updated>2015-03-18T00:00:00-04:00</updated><id>https://yourdomain.com/blog/ps-indexcolor-script</id><content type="html" xml:base="https://yourdomain.com/blog/ps-indexcolor-script/">&lt;div class=&quot;blogNav&quot;&gt;
   &lt;p&gt;&lt;span&gt;Photoshop Index Color Script&lt;/span&gt;&lt;/p&gt;
 
   &lt;p class=&quot;alignleft&quot;&gt;&lt;a href=&quot;/blog/osc-photoshop/&quot;&gt;← Previous Post&lt;/a&gt;&lt;/p&gt;
@@ -265,7 +265,7 @@ function hasSelection() {
 };
 
 doc.selection.deselect();
-&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="blog" /><summary type="html">Photoshop Index Color Script ← Previous Post Next Post →</summary></entry><entry><title type="html">Setup OSC communication for Photoshop</title><link href="http://yourdomain.com/blog/osc-photoshop/" rel="alternate" type="text/html" title="Setup OSC communication for Photoshop" /><published>2014-03-28T00:00:00-04:00</published><updated>2014-03-28T00:00:00-04:00</updated><id>http://yourdomain.com/blog/osc-photoshop</id><content type="html" xml:base="http://yourdomain.com/blog/osc-photoshop/">&lt;!--
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="blog" /><summary type="html">Photoshop Index Color Script ← Previous Post Next Post →</summary></entry><entry><title type="html">Setup OSC communication for Photoshop</title><link href="https://yourdomain.com/blog/osc-photoshop/" rel="alternate" type="text/html" title="Setup OSC communication for Photoshop" /><published>2014-03-28T00:00:00-04:00</published><updated>2014-03-28T00:00:00-04:00</updated><id>https://yourdomain.com/blog/osc-photoshop</id><content type="html" xml:base="https://yourdomain.com/blog/osc-photoshop/">&lt;!--
 + the or our : the/our : OUR/WE &lt; ok?
 + USE ARGUMENT&gt;&gt; NOT VALUE !!
 + swap vs swaps. Having now changed order of main.js code/code description!
@@ -301,10 +301,10 @@ doc.selection.deselect();
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Andy Hall:&lt;/strong&gt; &lt;a href=&quot;http://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/&quot;&gt;Node.js + Photoshop: How Comments Feed Design and Generator&lt;/a&gt;, &lt;a href=&quot;http://www.youtube.com/watch?v=wqmMqB91zdI&quot;&gt;JSConf.Asia 2013&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Andy Hall:&lt;/strong&gt; &lt;a href=&quot;https://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/&quot;&gt;Node.js + Photoshop: How Comments Feed Design and Generator&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/watch?v=wqmMqB91zdI&quot;&gt;JSConf.Asia 2013&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Lee Brimelow:&lt;/strong&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=lmSKgiY0ZPM&quot;&gt;Introduction to Photoshop Generator&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Lee Brimelow:&lt;/strong&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=lmSKgiY0ZPM&quot;&gt;Introduction to Photoshop Generator&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Tom Krcha:&lt;/strong&gt; can no longer locate videos&lt;/p&gt;
@@ -315,7 +315,7 @@ doc.selection.deselect();
 
 &lt;p&gt;To follow along, you’ll need:&lt;/p&gt;
 
-&lt;p&gt;Photoshop CC, &lt;a href=&quot;https://github.com/adobe-photoshop/generator-core&quot;&gt;Generator-Core&lt;/a&gt;, &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;, &lt;a href=&quot;http://www.osculator.net/&quot;&gt;Osculator&lt;/a&gt;, &lt;a href=&quot;https://github.com/Samelot/openbuttkiss&quot;&gt;Openbuttkiss&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Photoshop CC, &lt;a href=&quot;https://github.com/adobe-photoshop/generator-core&quot;&gt;Generator-Core&lt;/a&gt;, &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;, &lt;a href=&quot;https://www.osculator.net/&quot;&gt;Osculator&lt;/a&gt;, &lt;a href=&quot;https://github.com/Samelot/openbuttkiss&quot;&gt;Openbuttkiss&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
@@ -383,7 +383,7 @@ and check &lt;code&gt;Enable Generator&lt;/code&gt;. You may need to restart Pho
 
 &lt;p&gt;When selected, the plugin name in the Generate dropdown menu should be checked, telling us and Photoshop that it’s enabled. To disable the plugin, select it again.&lt;/p&gt;
 
-&lt;p&gt;Now that we’re running openbuttkiss, we are ready to send it some OSC action. We’ll need to use a program that can handle sending/recieving OSC messages. Here, I’ll be using &lt;a href=&quot;http://www.osculator.net/&quot; title=&quot;Osculator website&quot;&gt;Osculator&lt;/a&gt;, which is free and fully functional to download, minus the 20 second timeouts.&lt;/p&gt;
+&lt;p&gt;Now that we’re running openbuttkiss, we are ready to send it some OSC action. We’ll need to use a program that can handle sending/recieving OSC messages. Here, I’ll be using &lt;a href=&quot;https://www.osculator.net/&quot; title=&quot;Osculator website&quot;&gt;Osculator&lt;/a&gt;, which is free and fully functional to download, minus the 20 second timeouts.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Configuring Osculator&lt;/strong&gt;&lt;/p&gt;
 
@@ -564,9 +564,9 @@ and check &lt;code&gt;Enable Generator&lt;/code&gt;. You may need to restart Pho
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://opensoundcontrol.org/spec-1_0&quot;&gt;Open Sound Control 1.0 Specification&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://opensoundcontrol.org/spec-1_0&quot;&gt;Open Sound Control 1.0 Specification&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf&quot;&gt;Control of VST Plug-ins Using OSC&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf&quot;&gt;Control of VST Plug-ins Using OSC&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><category term="blog" /><summary type="html"></summary></entry></feed>
