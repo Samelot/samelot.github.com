@@ -15,9 +15,6 @@ custom_sub: ps
 + capitalization
 -->
 
-<!-- DELETE? -->
-{% include injectbullet.html %}
-
 {% include injectblognav.html %}
 
 ## Overview and Requirements
