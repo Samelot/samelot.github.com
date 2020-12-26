@@ -1,0 +1,29 @@
+I"�
+<div class="blogNav">
+  <p><span>Tasker Tips 1: Intro</span></p>
+
+  <p class="alignleft"><a href="/blog/ps-indexcolor-script/">← Previous Post</a></p>
+  <p class="alignright"><a href="/blog/screen-alignment/">Next Post →</a></p>
+  <div style="clear: both;"></div>
+
+</div>
+
+<h2 id="disclaimer">Disclaimer:</h2>
+
+<p>Keep in mind that the these Tasks were made and tested on the <strong>Resurrection Remix LuisROM</strong> (Android Nougat) for Oneplus 5T.</p>
+
+<ul>
+  <li>
+    <p><a href="https://forum.xda-developers.com/oneplus-5t/development/op5t-resurrection-remix-n-t3746009">XDA forums</a></p>
+  </li>
+  <li>
+    <p><a href="https://luis-builds.de/downloads/lineageos/rr/oneplus5t/">luis-builds.de</a></p>
+  </li>
+</ul>
+
+<p>For those more curious about this ROM, <a href="https://en.miui.com/thread-616732-1-1.html">check out this in-depth review</a>. It provides a very detailed inspection on the many screens and configuration options. This ROM is the first custom ROM I’ve ever used and I found it to be magnificent!</p>
+
+<p><em>It seems the developer discontinued work on his Nougat RR ROM to focus more time on Oreo.</em></p>
+
+<p>Enjoy :)</p>
+:ET
