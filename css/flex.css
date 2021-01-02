@@ -16,41 +16,14 @@
 
 }
 
-/* For bouncing main content off of header !!! all in one place as to keep things consistent */
-
-.artRow {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-
-    margin-bottom: 20px;
-    /*padding:0px 8px 0px 8px;*/
-    /*margin:18px;*/
-
-}
-
 /* Flex Items */
 
 .blogItem {
     width:100%;
-    margin:4px;
+    /* margin:4px; */
     border-bottom:0px solid rgba(180, 180, 180, .7);
     /*padding: 10px;*/
 }
-
-.picsItem {
-    /*
-    border:1px solid rgba(180, 180, 180, .2);
-    margin:0px 4px 0px 4px;
-    */
-    /* SLOWER PERFORMANCE? */
-    /*border-radius: 3px;*/
-}
-
 
 @media all and (max-width: 483px) {
     .flexContainer {
@@ -58,10 +31,8 @@
         justify-content:center;
     }
 
-    .picsItem, .blogItem {
+    .blogItem {
       align-self:center;
       width:100%;
     }
 }
-
-
