@@ -5,8 +5,9 @@ body {
     padding-right:0px;
     /*font: 13.34px Verdana, helvetica, arial, clean, sans-serif;*/
     /*font-family: "Consolas", "Monaco", "Courier New", "Courier", monospace;*/
-    font-size:100%
+    font-size:100%;
 }
+
 .wrapper {
     min-width:220px;
     max-width: 884px;
@@ -16,6 +17,7 @@ body {
     padding-right:13px;
 }
 
+/* Delete?? */
 .bad-wrapper {
     min-width:220px;
     max-width: 884px;
@@ -23,6 +25,11 @@ body {
     margin-right: auto;
     padding-left:0px;
     padding-right:0px;
+}
+/* Delete?? */
+.bad-headerLinks {
+    padding-left:13px;
+    margin-top:44px;
 }
 
 /*****************************************************************************/
@@ -41,7 +48,6 @@ body {
     min-width:220px;
     max-width:884px;
     height:131px;
-    margin-bottom:;
     text-align:center;
     /*border:1px solid black;*/
     /* CONSISTENCY: for spacing between elements, primarilly use margin-bottom */
@@ -53,10 +59,7 @@ body {
 .headerLinks {
     margin-top:44px;
 }
-.bad-headerLinks {
-    padding-left:13px;
-    margin-top:44px;
-}
+
 .logoLink {
     display:block;
     min-width:220px;
@@ -93,8 +96,6 @@ body {
     background:#000;
     text-shadow: 3px 2px 0px rgba(180, 180, 180, .6);
     font-family:"Consolas", "Monaco", "Courier New", "Courier", monospace;
-    /*padding:0px 0px 0px 4px;
-    margin:0px;*/
     font-weight:bold;
 }
 a {

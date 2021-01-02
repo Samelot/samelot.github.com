@@ -1,0 +1,307 @@
+I"	<<!--
++ the or our : the/our : OUR/WE < ok?
++ USE ARGUMENT>> NOT VALUE !!
++ swap vs swaps. Having now changed order of main.js code/code description!
++ plugin menu-state vs plugin's menu-state
++ internal/built-in... it's ok to use internal once or twice, but not enough to overpower our understanding.
++ don't get too into osculator.
++ extendscript is .JSX
++ capitalization
+-->
+
+<div class="blogNav">
+  <p><span>Setup OSC communication for Photoshop</span></p>
+
+  <p class="alignleft"></p>
+  <p class="alignright"><a href="/blog/ps-indexcolor-script/">Next Post →</a></p>
+  <div style="clear: both;"></div>
+
+</div>
+
+<h2 id="overview-and-requirements">Overview and Requirements</h2>
+
+<p>In this post, we’ll setup Photoshop to use OSC (Open Sound Control). <!-- If your curious about what this looks like, and you want to see it before you try it, [check out this video](https://vimeo.com/92411743). --></p>
+
+<!-- If your curious about what this looks like, and you want to see it with your eyes before you try it with your thighs, [click here](https://vimeo.com/92411743). -->
+
+<!-- If you're curious about why we'd want to do that, please refer to the previous post, [magic bridge](). -->
+
+<p>We’ll use a Generator plugin called <a href="https://github.com/Samelot/openbuttkiss">Openbuttkiss</a>, which gives OSC messages access to Photoshop’s API. More specifically, when an OSC message with an argument of 1 is recieved, the foreground and background colors are swapped. Utilized by this plugin is a Nodejs module that provides the protocols to communicate via OSC. I made the plugin to demonstrate this sort of integration at its most fundamental level; it is left simple and concise. Expansion will come later.</p>
+
+<p>I used some code from Tom Krcha’s <a href="https://github.com/adobe-photoshop/generator-getting-started" title="getting-started-plugin">getting-started-plugin</a> - this provided a good foundation for my plugin and the features I would add. Big thanks to him and the others out there that made great tutorials employing Photoshop-Generator and Nodejs:</p>
+
+<ul>
+  <li>
+    <p><strong>Andy Hall:</strong> <a href="https://aphall.com/2013/10/generator%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E4%BD%BF%E3%81%84%E6%96%B9/">Node.js + Photoshop: How Comments Feed Design and Generator</a>, <a href="https://www.youtube.com/watch?v=wqmMqB91zdI">JSConf.Asia 2013</a></p>
+  </li>
+  <li>
+    <p><strong>Lee Brimelow:</strong> <a href="https://www.youtube.com/watch?v=lmSKgiY0ZPM">Introduction to Photoshop Generator</a></p>
+  </li>
+  <li>
+    <p><strong>Tom Krcha:</strong> can no longer locate videos</p>
+  </li>
+</ul>
+
+<p>The purpose of writing this post is to explain and understand the OSC implementation that is happening in my plugin. I’d like to clear up any areas of the code that are prone to confusion, and that may have caused myself some frustration.</p>
+
+<p>To follow along, you’ll need:</p>
+
+<p>Photoshop CC, <a href="https://github.com/adobe-photoshop/generator-core">Generator-Core</a>, <a href="https://nodejs.org/">Node.js</a>, <a href="https://www.osculator.net/">Osculator</a>, <a href="https://github.com/Samelot/openbuttkiss">Openbuttkiss</a></p>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>
+    <p>Download <a href="https://github.com/Samelot/openbuttkiss">openbuttkiss</a>.</p>
+  </li>
+  <li>
+    <p>In terminal, cd to the plugin folder (openbuttkiss) and run <code>npm install</code> to download any dependencies.</p>
+  </li>
+  <li>
+    <p>Follow one of the methods below to set up the plugin with a Photoshop Generator.</p>
+  </li>
+</ol>
+
+<p><strong>Built-in Generator</strong></p>
+
+<blockquote>
+  <p>Place the plugin inside the Photoshop Plug-ins folder:</p>
+
+  <p><code>Applications/Adobe Photoshop CC/Plug-ins/Generator</code></p>
+
+  <!-- > ![Built-in Generator plugin location](/images/internal-plugin-folder.png "Plugins to be run by Built-in Generator") -->
+
+  <p>Open Photoshop.
+Go to <code>Photoshop &gt; Preferences &gt; Plug-ins</code>
+and check <code>Enable Generator</code>. You may need to restart Photoshop for this to take effect.</p>
+</blockquote>
+
+<!-- Enable Remote Connections -->
+
+<p><strong>External Generator</strong></p>
+
+<blockquote>
+  <p>Run the plugin from a locally cloned <a href="https://github.com/adobe-photoshop/generator-core">generator-core</a> library (think of this as our external generator, which exists outside of the Photoshop application). Don’t forget to <code>npm install</code>, to grab all the generator-core dependencies. My workflow when using this library consists of having all my plugins inside the generator-core plugins folder:</p>
+
+  <!-- > ![External Generator plugin location](/images/external-plugin-folder.png "Plugins to be run by External Generator") -->
+
+  <p>In terminal, cd to <code>generator-core</code> and run:</p>
+
+  <p><code>node app.js -f test/plugins/openbuttkiss</code></p>
+
+  <p>This app.js contains all the magic needed to run our plugin. The plugin location is specified at the end of the command.</p>
+</blockquote>
+
+<!-- generator-core plugins folder? test/plugins or plugins -->
+
+<p>Photoshop can use Built-in and External Generators to process a plugin; each generator provides a slightly different workflow. Regardless of which generator is being used, the plugin should produce the same results. Be aware that conflicts may arise when using both internal and external generators. In my experience, I had to disable the built-in generator to properly run openbuttkiss with the external generator.</p>
+
+<p><a href="https://github.com/adobe-photoshop/generator-core/wiki/Generator-Architecture">Read more on Photoshop Generators and the Generator Architecture</a>.</p>
+
+<h2 id="running">Running</h2>
+
+<p>After completing the above steps, openbuttkiss should now be available for use. In Photoshop, select the plugin from the drop down menu:</p>
+
+<p><code>File &gt; Generate &gt; openbuttkiss</code></p>
+
+<p><strong>Plugin being run by the Built-in Generator</strong></p>
+
+<!-- ![built-in generator running our plugin](/images/internal-generators.png "Run a plugin with Built-in Generator") -->
+
+<p><strong>Plugin being run by an External Generator</strong></p>
+
+<!-- ![external generator running our plugin](/images/external-generators.png "Run a plugin with External Generator") -->
+
+<p>When selected, the plugin name in the Generate dropdown menu should be checked, telling us and Photoshop that it’s enabled. To disable the plugin, select it again.</p>
+
+<p>Now that we’re running openbuttkiss, we are ready to send it some OSC action. We’ll need to use a program that can handle sending/recieving OSC messages. Here, I’ll be using <a href="https://www.osculator.net/" title="Osculator website">Osculator</a>, which is free and fully functional to download, minus the 20 second timeouts.</p>
+
+<p><strong>Configuring Osculator</strong></p>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>Open up Osculator.</p>
+    </li>
+    <li>
+      <p>Go to <code>View &gt; Parameters</code>, or click on the <code>Parameters</code> icon. This page stores any OSC addresses we plan on communicating to, with each address, being stored as a target. Under the <code>OSC URL or choice from gear menu</code> column, double click on the empty address slot of target #1. Type in:</p>
+
+      <p><code>osc.udp://localhost:3333</code></p>
+    </li>
+  </ol>
+
+  <!-- >    ![Osculator address](/images/osculator-address.png "Create a target to send our OSC messages to") -->
+
+  <ol>
+    <li>
+      <p>Click the <code>+</code> symbol located in the bottom left corner of the Parameters page. Close the Parameters page.</p>
+    </li>
+    <li>
+      <p>Go to <code>Routing &gt; Manually Create Message...</code> Name it whatever you want and hit ok. A new message appears in the application window.</p>
+    </li>
+    <li>
+      <p>Click the empty message parameter under the <code>Event Type</code> column, select <code>OSC Routing</code> from the dropdown menu.</p>
+    </li>
+    <li>
+      <p>Click the empty message parameter under the <code>Value</code> column, select <code>Đ</code> from the dropdown menu.</p>
+    </li>
+  </ol>
+</blockquote>
+
+<!-- If you have any issues with doing this, see the video I made. In it, I set up Osculator to connect to our osc server. REWORD IF INCLUDED -->
+
+<p>Done!</p>
+
+<p>Our new OSC message should now be targeting the address we specified earlier. We should now be able to send it to Photoshop. Do this by clicking the small grey box on the left hand side of the message we just created, it should flash green.</p>
+
+<p>If everything went over smoothly, when we trigger the message in Osculator, we should see the foreground and background colors swap in Photoshop. Remember that openbuttkiss must be enabled in Photoshop.</p>
+
+<h2 id="plugin-code">Plugin Code</h2>
+
+<p><strong>package.json</strong></p>
+
+<pre><code>{
+    "name": "openbuttkiss",
+    "description": "osc-ps plugin",
+    "version": "0.0.0",
+    "main": "main.js",
+    "generator-core-version": "&gt;=1.0.0",
+    "dependencies": {
+        "node-osc": "0.2.1"
+    },
+    "devDependencies": {}
+}
+</code></pre>
+
+<ul>
+  <li>
+    <p>The <code>"main"</code> field tells us that main.js will be the primary entry point of the plugin.</p>
+  </li>
+  <li>
+    <p>The <code>"generator-core-version"</code> field tells us what version of generator we are using. Inaccurately specified version may render the plugin incompatible.</p>
+  </li>
+  <li>
+    <p>The <code>"dependencies"</code> field lists any dependencies that our plugin requires to run. Node-osc is the module our plugin uses to process OSC messages. As a matter of fact, if you were to look at node-osc’s package.json, you’d find that node-osc requires another nodejs module, osc-min. This module was used in the original <a href="https://github.com/maxenglander/buttkisshttps://github.com/maxenglander/buttkiss" title="our first osc-ps implementation">buttkiss</a>. Check out some other popular <a href="https://nodejsmodules.org/tags/osc">nodejs OSC modules</a> - maybe you’ll find one you really like!</p>
+  </li>
+</ul>
+
+<p><strong>main.js</strong></p>
+
+<pre><code>var oscR = require('node-osc'),
+</code></pre>
+
+<!-- Plural?? Retrieves. We aren't giving directions to a person. We are describing the program's direction. -->
+
+<p>Retrieve the logic for receiving OSC messages. The logic comes from the node-osc dependency we installed earlier, which exists in the node_modules folder of our plugin.</p>
+
+<pre><code>oscServer = new oscR.Server(3333, '127.0.0.1'),
+</code></pre>
+
+<p>Create an osc server and assign it to the variable oscServer. Server initialization happens when we run the plugin from terminal, or, if using the internal/built-in Generator, whenever we start up Photoshop. Once we set up a listerner, our server will be able to recieve incoming osc messages at 127.0.0.1 (localhost), port 3333.</p>
+
+<p><strong>Don’t get the oscServer mixed up with our server listener, they are two different things.</strong></p>
+
+<pre><code>toggler = 0,
+</code></pre>
+
+<p>Toggler gets assigned either a 0 or 1 based on the plugin’s menu-state - whether is is checked or unchecked.</p>
+
+<ul>
+  <li><strong>0 = disabled / unchecked</strong></li>
+  <li><strong>1 = enabled / checked</strong></li>
+</ul>
+
+<pre><code>psToFront = "app.bringToFront();";
+</code></pre>
+
+<p>Switch to Photoshop application. Bring it to the front of any other applications we have open. Must be passed to _generator.evaluateJSXString().</p>
+
+<!-- {:.break-me} -->
+
+<pre><code>var colorFlip = "var fColor = app.foregroundColor;
+    app.foregroundColor = app.backgroundColor;
+    app.backgroundColor = fColor;";
+</code></pre>
+
+<p>Swap foreground and background colors. Both colorFlip and psToFront are extendscript code (.jsx) and must be handled differently than other javascript in main.js. They are passed through _generator.evaluateJSXString(). I got stuck on this when I first tried to use extendscript in my Generator plugins - <a href="https://github.com/adobe-photoshop/generator-core/issues/138" title="thx Joel">Check out my issue at Github</a>.</p>
+
+<pre><code>oscServer.on("message", function (msg, rinfo) {
+    if(toggler==1 &amp;&amp; msg[1]==1){
+        actions();
+    }
+});
+</code></pre>
+
+<p>oscServer.on is the server’s listener - it listens for incoming osc messages. The plugin must be enabled at least once for the listener to initialize. After that, the server will always be listening, choosing whether or not to execute actions() based on the conditions of the if statement. If these conditions are not met, the message will still be recieved, but nothing will be done.</p>
+
+<p>There are probebly other ways in which our plugin menu-state can influence our OSC server and server listener. To enable/disable these components, in accordance to our our menu-state, might be a better alternative to our current setup.</p>
+
+<pre><code>function actions(){
+    _generator.evaluateJSXString(colorFlip);
+    _generator.evaluateJSXString(psToFront);
+}
+</code></pre>
+
+<p>Called from our oscServer.on, this function executes two things, colorFlip followed by our psToFront. Both of these are passed to _generator.evaluateJSXString().</p>
+
+<pre><code>if(checked==true) {
+    toggler = 1;
+    console.log("OSC enabled!");
+} else {
+    toggler = 0;
+    console.log("OSC disabled!");
+}
+</code></pre>
+
+<p>Inside the onMenuClicked() function. Each time the plugin’s menu-state changes, an if / else statement is executed, setting toggler to 0 or 1.</p>
+
+<h2 id="understanding-osc-messages">Understanding OSC Messages</h2>
+
+<p>Node-osc gives us access to different parts of our osc message.</p>
+
+<ul>
+  <li>msg[0] retrieves the address of the message</li>
+  <li>msg[1] retrieves the argument (value) of the message</li>
+</ul>
+
+<p>The message bubbahjubbah, sent from Osculator to openbuttkiss, could be broken down like this:</p>
+
+<p><em>bubbahjubbah transmits two arguments each time it is triggered</em></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">msg</th>
+      <th style="text-align: center">msg[0]</th>
+      <th style="text-align: center">msg[1]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">[ ‘bubbahjubbah’, 1 ]</td>
+      <td style="text-align: center">bubbahjubbah</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[ ‘bubbahjubbah’, 0 ]</td>
+      <td style="text-align: center">bubbahjubbah</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I’m sure node-osc and other Nodejs OSC modules allow for a more elaborate parsing of messages. I haven’t fully explored Open Sound Control, and my involvment with it has not surpassed a most basic usage. The benefits of osc seem to be in its ability to develop a rich organization of flexible parameter names. Openbuttkiss keeps clear of all that. Its only interest is a message, of any address, with an argument of 1.</p>
+
+<!-- of any address, of any messages? -->
+
+<p><strong>For more info on Open Sound Control:</strong></p>
+
+<ul>
+  <li>
+    <p><a href="https://opensoundcontrol.org/spec-1_0">Open Sound Control 1.0 Specification</a></p>
+  </li>
+  <li>
+    <p><a href="https://opensoundcontrol.org/files/zbyszynski_ICMC3.pdf">Control of VST Plug-ins Using OSC</a></p>
+  </li>
+</ul>
+:ET
